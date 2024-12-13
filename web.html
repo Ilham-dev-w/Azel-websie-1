@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Website Untuk Pacarku</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+        <style>
+            /* Animasi dan tema warna */
+            body {
+                font-family: 'Poppins', sans-serif;
+            }
+            
+            .text-pink {
+                color: #ff69b4;
+            }
+            
+            .header-gradient {
+                background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            }
+            
+            .container-gradient {
+                background: linear-gradient(135deg, #a1c4fd, #c2e9fb);
+                border-radius: 15px;
+            }
+            
+            .animate-header {
+                animation: fadeIn 2s ease-out;
+            }
+            
+            .animate-text {
+                animation: slideIn 3s ease-out;
+            }
+            
+            .animate-section {
+                animation: fadeInUp 1.5s ease-in-out;
+            }
+            
+            .gallery-photo {
+                width: 300px;
+                margin-right: 15px;
+                transition: transform 0.5s ease-in-out;
+            }
+            
+            /* Gallery styles */
+            .gallery-wrapper {
+                width: 100%;
+                overflow: hidden;
+            }
+            
+            .gallery-track {
+                display: flex;
+                transition: transform 1s ease-in-out;
+                gap: 20px;
+            }
+            
+            .gallery-card {
+                min-width: 30%;
+                max-width: 30%;
+                flex: 0 0 auto;
+                border: none;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            .ekspresi-track {
+                display: flex;
+                transition: transform 1s ease-in-out;
+                gap: 20px;
+            }
+            
+            .ekspresi-card {
+                min-width: 30%;
+                max-width: 30%;
+                flex: 0 0 auto;
+                border: none;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            }
+            
+            .card-img-top {
+                height: 640px;
+                object-fit: cover;
+            }
+
+            @keyframes fadeIn {
+                from { opacity: 0; }
+                to { opacity: 1; }
+            }
+            
+            @keyframes slideIn {
+                from { transform: translateY(-50px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+            
+            @keyframes fadeInUp {
+                from { transform: translateY(30px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+
+            /* Responsiveness */
+            @media (max-width: 768px) {
+                .gallery-card {
+                    min-width: 80%; /* Tampilkan 1 kartu */
+                    max-width: 100%;
+                }
+
+                .gallery-track {
+                    width: 100%;
+                }
+
+                .ekspresi-card {
+                    min-width: 80%; /* Tampilkan 1 kartu */
+                    max-width: 100%;
+                }
+
+                .ekspresi-track {
+                    width: 100%;
+                }
+
+                .card-img-top {
+                    height: 150px;
+                }
+
+                .header-gradient {
+                    padding: 20px;
+                }
+
+                h1 {
+                    font-size: 1.8rem;
+                }
+
+                p {
+                    font-size: 0.9rem;
+                }
+            }
+
+            @media (min-width: 769px) {
+                .gallery-card {
+                    min-width: 30%; /* Tampilkan 3 kartu */
+                    max-width: 50%;
+                }
+
+                .ekspresi-card {
+                    min-width: 30%; /* Tampilkan 3 kartu */
+                    max-width: 50%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Audio Player -->
+        <audio id="romanticMusic" autoplay loop>
+            <source src="romantic-music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+
+        <!-- Header -->
+        <header class="text-center p-5 bg-light header-gradient">
+            <h1 class="display-4 text-pink animate-header">Untuk Kamu, Sayangku!</h1>
+            <p class="lead text-secondary animate-text">Sebuah website kecil untuk menunjukkan betapa spesialnya kamu! 💖</p>
+        </header>
+
+        <!-- About Us -->
+        <section class="about-us text-center p-5 container-gradient">
+            <h2 class="text-pink mb-4 animate-section">Tentang Kita</h2>
+            <p>Udah lebih dari setahun kita saling kenal, berbagi rasa suka dan duka bersama, berbagi cerita bareng, ketawa bareng, sampai sedih bareng.</p>
+            <p>Semua moment yang udah kita lalui membuat aku semakin yakin buat mencintai kamu sayangg ❤️</p>
+        </section>
+
+        <!-- Gallery -->
+        <section class="gallery p-5 bg-light container-gradient">
+            <div class="container">
+                <h2 class="text-center text-pink mb-4 animate-section">Galeri Kenangan</h2>
+                <div id="gallerySlider" class="gallery-wrapper position-relative">
+                    <div class="gallery-track">
+                        <!-- Tambahkan kartu galeri di sini -->
+                        <div class="card gallery-card">
+                          <img src="images/kenangan_1.png" loading="lazy" class="card-img-top rounded" alt="Foto 1">
+                          <div class="card-body text-center">
+                            <h5 class="card-title text-pink">Saat kita bertemu..</h5>
+                            <p class="card-text">Ini adalah tempat pertama kali kita ketemu ❤️, waktu itu kamu nganterin makanan buat aku dan tim, makasih banyak yahh, walaupun kamu juga lagi sibuk lomba, kamu masih sempet bantuin panitia untuk bagiin makanan</p>
+                            <p>Love you sayangg❤️</p>
+                          </div>
+                        </div>
+                        <div class="card gallery-card">
+                          <img src="images/kenangan_2.png" loading="lazy" class="card-img-top rounded" alt="Foto 2">
+                          <div class="card-body text-center">
+                            <h5 class="card-title text-pink">Asikk, kita menang lomba 😍</h5>
+                            <p class="card-text">Ini waktu kita menang lomba, keren banget gak sihh ?, liat deh, kita foto bareng gitu, terus aku inget banget kamu ngomong "Ih kita kayak kembar yahh" wkwkwk, lucu ya fotonyaa</p>
+                          </div>
+                        </div>
+                        <div class="card gallery-card">
+                          <img src="images/kenangan_3.png" loading="lazy" class="card-img-top rounded" alt="Foto 3">
+                          <div class="card-body text-center">
+                            <h5 class="card-title text-pink">Kencan di perpus UIN ❤️</h5>
+                            <p class="card-text">Fotonya kepotong sihh karena ukurann wkwk, tapi semoga engga ganggu yaa. Ini foto kita pas lagi kencan di perpustakaan UIN, seinget aku kalo gak salah kita abis dari kantor PPM buat ngurus KKN kamu, selamat yahh, kamu hebat banget loh bisa menjadi bagian dari KKN kebangsaan 🤩</p>
+                            <p>Proud of you, sayangg ❤️</p>
+                          </div>
+                        </div>
+                        <div class="card gallery-card">
+                          <img src="images/kenangan_4.png" loading="lazy" class="card-img-top rounded" alt="Foto 4">
+                          <div class="card-body text-center">
+                            <h5 class="card-title text-pink">Kencan di jus kode</h5>
+                            <p class="card-text">Ini tempat aku nembak kamu ingett ? waktu itu kita lagi jalan-jalan ke jus kode buat nyobain jus disana, katanya jus nya kentel banget. Aku inget kamu pesen jus buah naga dicampur lemon, coba kamu bisa tebak gak aku pesen apa disana ?</p>
+                          </div>
+                        </div>
+                        <div class="card gallery-card">
+                          <img src="images/kenangan_5.png" loading="lazy" class="card-img-top rounded" alt="Foto 5">
+                          <div class="card-body text-center">
+                            <h5 class="card-title text-pink">Kencan di taman pamulang</h5>
+                            <p class="card-text">Ini foto sebenernya waktu kita makan nasi goreng di taman pamulang sihhh WKWKWK, tapi karena terkendala size, makannya aku potong muka kamu ajaa, lucu dehh. Ini waktu kamu ulang tahun, seru banget jalan-jalannya, kita bahkan sempet mampir ke gramedia lohh, kamu beli 1 buku novel disana, oh iya, btw kamu inget gak aku kasih apa waktu itu ?</p>
+                          </div>
+                        </div>
+                        <div class="card gallery-card">
+                          <img src="images/kenangan_6.png" loading="lazy" class="card-img-top rounded" alt="Foto 6">
+                          <div class="card-body text-center">
+                            <h5 class="card-title text-pink">Our first time photobooth date</h5>
+                            <p class="card-text">Ini momen kencan photobooth kita yang pertama, lucu banget gak sihh ?, ada dino kuning juga yang nemenin kita. Sebelumnya juga kita mampir di perpustakaan deket situ, perpustakaannya nyaman banget, kapan kapan kita mampir lagi ya kesanaa</p>
+                          </div>
+                        </div>
+                        <div class="card gallery-card">
+                          <img src="images/kenangan_7.png" loading="lazy" class="card-img-top rounded" alt="Foto 5">
+                          <div class="card-body text-center">
+                            <h5 class="card-title text-pink">My favorite moment</h5>
+                            <p class="card-text">Jujur ini moment yang paling aku suka, kamu tau kan aku paling suka momen dimana kita nonton barengg ?, film nya spesial, dan ditonton bareng orang yang spesial buat akuu</p>
+                            <p>Aku harap kita bisa bersama terus yahh ❤️</p>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gallery p-5 bg-light container-gradient">
+            <div class="container">
+                <h2 class="text-center text-pink mb-4 animate-section">Eskpresi Azel (Dino Version)</h2>
+                <div id="gallerySlider" class="gallery-wrapper position-relative">
+                    <div class="ekspresi-track">
+                        <!-- Tambahkan kartu galeri di sini -->
+                        <div class="card ekspresi-card">
+                          <img src="images/dino_senang.jpeg" loading="lazy" class="card-img-top rounded" alt="Foto 1">
+                          <div class="card-body text-center">
+                            <h5 class="card-title text-pink">Ini ekspresi kamu pas senang</h5>
+                          </div>
+                        </div>
+                        <div class="card ekspresi-card">
+                          <img src="images/dino_melet.jpeg" loading="lazy" class="card-img-top rounded" alt="Foto 2">
+                          <div class="card-body text-center">
+                            <h5 class="card-title text-pink">Ini ekspresi kamu pas melet</h5>
+                          </div>
+                        </div>
+                        <div class="card ekspresi-card">
+                          <img src="images/dino_usil.jpeg" loading="lazy" class="card-img-top rounded" alt="Foto 3">
+                          <div class="card-body text-center">
+                            <h5 class="card-title text-pink">Ini ekspresi kamu pas usil</h5>
+                          </div>
+                        </div>
+                        <div class="card ekspresi-card">
+                          <img src="images/dino_kesel.jpeg" loading="lazy" class="card-img-top rounded" alt="Foto 4">
+                          <div class="card-body text-center">
+                            <h5 class="card-title text-pink">Ini ekspresi kamu pas kesel</h5>
+                          </div>
+                        </div>
+                        <div class="card ekspresi-card">
+                          <img src="images/dino_ngambek.jpg" loading="lazy" class="card-img-top rounded" alt="Foto 5">
+                          <div class="card-body text-center">
+                            <h5 class="card-title text-pink">Ini ekspresi kamu pas ngambek</h5>
+                          </div>
+                        </div>
+                        <div class="card ekspresi-card">
+                          <img src="images/dino_sedih.jpeg" loading="lazy" class="card-img-top rounded" alt="Foto 6">
+                          <div class="card-body text-center">
+                            <h5 class="card-title text-pink">Ini ekspresi kamu pas sedih</h5>
+                          </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>      
+
+        <!-- Love Notes -->
+        <section class="love-notes text-center p-5 container-gradient">
+            <h2 class="text-pink mb-4 animate-section">Catatan Cinta</h2>
+            <p class="text-secondary">“Terima kasih telah menjadi bagian dari hidupku!” 🌸</p>
+        </section>
+
+        <!-- Footer -->
+        <footer class="text-center p-4 bg-light">
+            <p class="text-secondary">💌 Dibuat dengan cinta untuk kamu, sayang! 💌</p>
+        </footer>
+
+        <script>
+            const galleryTrack = document.querySelector('.gallery-track');
+            const galleryCards = document.querySelectorAll('.gallery-card');
+            const ekspresiTrack = document.querySelector('.ekspresi-track');
+            const ekspresiCards = document.querySelectorAll('.ekspresi-card');
+
+            let currentIndex = 0;
+            let movingRight = true;
+
+            let ekspresiCurrentIndex = 0;
+            let ekspresiMovingRight = true;
+
+            function slideGallery() {
+                const totalCards = galleryCards.length;
+                const visibleCards = window.innerWidth < 768 ? 1 : 3;
+
+                galleryTrack.style.transform = `translateX(${-currentIndex * (galleryCards[0].offsetWidth + 20)}px)`;
+
+                if (movingRight) {
+                    currentIndex++;
+                    if (currentIndex >= totalCards - visibleCards) movingRight = false;
+                } else {
+                    currentIndex--;
+                    if (currentIndex <= 0) movingRight = true;
+                }
+            }
+
+            function ekspresiSlideGallery() {
+                const totalCards = ekspresiCards.length;
+                const visibleCards = window.innerWidth < 768 ? 1 : 3;
+
+                ekspresiTrack.style.transform = `translateX(${-currentIndex * (ekspresiCards[0].offsetWidth + 20)}px)`;
+
+                if (ekspresiMovingRight) {
+                    ekspresiCurrentIndex++;
+                    if (ekspresiCurrentIndex >= totalCards - visibleCards) ekspresiMovingRight = false;
+                } else {
+                    ekspresiCurrentIndex--;
+                    if (ekspresiCurrentIndex <= 0) ekspresiMovingRight = true;
+                }
+            }
+
+            setInterval(slideGallery, 6000);
+            setInterval(ekspresiSlideGallery, 2000);
+        </script>
+    </body>
+</html>
